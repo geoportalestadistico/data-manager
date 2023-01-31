@@ -1,0 +1,36 @@
+[tool.black]
+line-length = 120
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+)/
+'''
+
+
+
+# [tool.pytest.ini_options]
+# filterwarnings = ["ignore::DeprecationWarning"]
+# log_cli = true
+# log_cli_level = "INFO"
+# log_cli_format = "%(asctime)s [%(levelname)8s] %(message)s (%(filename)s:%(lineno)s)"
+# log_cli_date_format = "%Y-%m-%d %H:%M:%S"
+
+# addopts = "--strict-markers --capture=tee-sys"
+# testpaths = "tests"
+# python_classes = "test_*"
+# xfail_strict=true
+# markers = ["slow", "timeout", "instances"]
+
+# pythonpath = [
+#   "."
+# ]
+# DJANGO_SETTINGS_MODULE = "config.settings.prod_settings"

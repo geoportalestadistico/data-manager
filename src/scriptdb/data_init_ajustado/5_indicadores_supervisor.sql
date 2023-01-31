@@ -1,0 +1,1 @@
+# Crear usuarios y roles para el sistema de gestión estadística antes de correr el siguiente paso

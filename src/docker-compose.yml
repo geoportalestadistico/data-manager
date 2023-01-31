@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  django:
+    build: .
+    container_name: django_cepalstat
+    command: bash -c "python manage.py migrate
+      && python manage.py runserver 0.0.0.0:8000"
+    # command: >
+    #   sh -c "python manage.py migrate && gunicorn config.wsgi:application --bind 0.0.0.0:8000"
+
+    volumes:
+      - .:/usr/src/app/
+    ports:
+      - 80:8000
+    env_file: .env
+    depends_on:
+      - db
+
+  db:
+    image: postgres:14
+    container_name: db_cepalstat
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    #ATENCION Cerrar para producción
+    ports:
+      - 5432:5432
+    env_file: .env
+
+volumes:
+  postgres_data:
